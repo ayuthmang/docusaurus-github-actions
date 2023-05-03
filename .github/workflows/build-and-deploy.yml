@@ -2,6 +2,9 @@ name: Build and Deploy
 on: [push]
 permissions:
   contents: write
+defaults:
+  run:
+    working-directory: my-website
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
